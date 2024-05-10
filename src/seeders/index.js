@@ -7,7 +7,7 @@ const initModels = require('../models');
 
 const role = [{ name: "S admin" }, { name: "Admin" }, { name: "Profesional" }];
 
-const location = [{name: "Batán"}, {name: "Colón"}]
+const location = [{name: "Batán", sponsorshipId: 1}, {name: "Colón", sponsorshipId: 2}]
 
 const sponsor = [{sponsor: "Batán"}, {sponsor: "colón"}]
 
@@ -39,8 +39,8 @@ const users = [
 async function seedCreate() {
   await Role.bulkCreate(role);
   await Users.bulkCreate(users);
-  await Location.bulkCreate(location)
   await Sponsorship.bulkCreate(sponsor)
+  await Location.bulkCreate(location)
 }
 
 // agregar force: true a la configuración de Sequelize
